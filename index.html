@@ -68,7 +68,7 @@
 }
 </script>
 
-<link rel="stylesheet" href="styles.css?v=20261118c">
+<link rel="stylesheet" href="styles.css?v=20261118d">
 
 </head>
 <body>
@@ -406,6 +406,41 @@
     </div>
   </section>
 
+
+  <section class="sec" id="empfehlung">
+    <div class="wrap">
+      <div class="ref">
+        <div class="ref-l">
+          <span class="eyebrow">Empfehlungsprogramm</span>
+          <h2>Empfehlen Sie mich weiter. Ich bedanke mich.</h2>
+          <p class="rl">Sie kennen ein Unternehmen, das Hilfe bei SAP, Business Intelligence, KI oder in der Finanzleitung braucht? Stellen Sie den Kontakt her. Kommt ein Auftrag zustande, erhalten Sie eine Prämie.</p>
+          <ol class="ref-steps">
+            <li><b>Kontakt herstellen</b><span>Nennen Sie mir das Unternehmen oder setzen Sie mich in Kopie.</span></li>
+            <li><b>Auftrag kommt zustande</b><span>Ich führe das Erstgespräch und erstelle die Offerte.</span></li>
+            <li><b>Prämie erhalten</b><span>Auszahlung innert 30 Tagen, nachdem der Kunde bezahlt hat.</span></li>
+          </ol>
+        </div>
+        <div class="ref-r">
+          <table class="tiers">
+            <thead><tr><th scope="col">Auftrag</th><th scope="col" class="r">Ihre Prämie</th></tr></thead>
+            <tbody>
+              <tr><td>Finance &amp; ERP Quick-Check</td><td class="r">CHF 100</td></tr>
+              <tr><td>Projekt, Mandat, Schulung oder Interim</td><td class="r">10% des Honorars</td></tr>
+              <tr><td>Maximale Prämie pro Empfehlung</td><td class="r">CHF 2'000</td></tr>
+            </tbody>
+          </table>
+          <div class="calc">
+            <label for="vol">Rechner: Auftragsvolumen</label>
+            <div class="calc-row"><input type="range" id="vol" min="1000" max="40000" step="500" value="12000"><output id="volv" for="vol">CHF 12'000</output></div>
+            <div class="calc-res"><span>Ihre Prämie</span><b id="prem">CHF 1'200</b></div>
+          </div>
+          <a class="btn primary" href="#kontakt" id="ref-cta">Empfehlung melden <span class="a">→</span></a>
+          <p class="fine-r">Gilt für Neukunden, die mir noch nicht bekannt sind. Die Empfehlung muss vor dem Erstgespräch gemeldet werden. Die Prämie bezieht sich auf das Nettohonorar des ersten Auftrags. Auf Wunsch spende ich die Prämie an eine gemeinnützige Organisation Ihrer Wahl.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="sec" id="faq">
     <div class="wrap faq">
       <div><span class="eyebrow">FAQ</span><h2>Häufige Fragen.</h2></div>
@@ -445,6 +480,7 @@
             <input type="radio" name="t" id="c3" value="KI & Automatisierung"><label for="c3">KI</label>
             <input type="radio" name="t" id="c4" value="Interim / CFO on Demand"><label for="c4">Interim / CFO</label>
             <input type="radio" name="t" id="c5" value="Schulung"><label for="c5">Schulung</label>
+            <input type="radio" name="t" id="c6" value="Empfehlung"><label for="c6">Empfehlung</label>
           </div>
         </div>
         <div class="r2">
@@ -469,7 +505,7 @@
       <a class="brand" href="#top"><span class="m"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="9" width="6" height="6" rx="1.5" fill="#fff"/><rect x="16" y="9" width="6" height="6" rx="1.5" fill="#3358ff"/><path d="M8 12h8" stroke="#fff" stroke-width="2.4"/></svg></span><span><b>F&amp;MG Consulting</b><small>Finance · IT · Zürich</small></span></a>
       <p style="margin-top:16px;max-width:27em">Unabhängige Beratung, Support und Schulung an der Schnittstelle von Finanzen und IT für KMU.</p>
     </div>
-    <div><h4>Leistungen</h4><ul><li><a href="sap-beratung-zuerich.html">SAP-Beratung</a></li><li><a href="power-bi-controlling-kmu.html">BI &amp; Reporting</a></li><li><a href="ki-finance-automatisierung.html">KI in Finance</a></li><li><a href="interim-cfo-zuerich.html">Interim &amp; CFO on Demand</a></li><li><a href="schulungen-sap-power-bi-finanzen.html">Schulungen</a></li><li><a href="#quick-check">Quick-Check</a></li></ul></div>
+    <div><h4>Leistungen</h4><ul><li><a href="sap-beratung-zuerich.html">SAP-Beratung</a></li><li><a href="power-bi-controlling-kmu.html">BI &amp; Reporting</a></li><li><a href="ki-finance-automatisierung.html">KI in Finance</a></li><li><a href="interim-cfo-zuerich.html">Interim &amp; CFO on Demand</a></li><li><a href="schulungen-sap-power-bi-finanzen.html">Schulungen</a></li><li><a href="#quick-check">Quick-Check</a></li><li><a href="#empfehlung">Empfehlungsprogramm</a></li></ul></div>
     <div><h4>Impressum</h4><p>F&amp;MG Consulting, Gediz<br>Einzelunternehmen<br>Inhaber: Murat Gediz<br>8041 Zürich<br>UID CHE-468.805.639</p></div>
     <div><h4>Datenschutz</h4><p>Personendaten werden vertraulich und ausschliesslich zur Bearbeitung Ihrer Anfrage verwendet, gemäss Schweizer Datenschutzgesetz (DSG).</p></div>
   </div>
@@ -482,6 +518,14 @@
     if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       var b = document.querySelector(".bridge"); if (b && b.pauseAnimations) b.pauseAnimations();
     }
+  } catch (e) {}
+
+  try {
+    var vol = document.getElementById('vol'), vv = document.getElementById('volv'), pr = document.getElementById('prem');
+    var fmt = function (n) { return "CHF " + Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'"); };
+    var upd = function () { var v = +vol.value; vv.textContent = fmt(v); pr.textContent = fmt(v <= 1490 ? 100 : Math.min(v * 0.1, 2000)); };
+    vol.addEventListener('input', upd); upd();
+    document.getElementById('ref-cta').addEventListener('click', function () { var r = document.getElementById('c6'); if (r) r.checked = true; });
   } catch (e) {}
   var f = document.getElementById('form'), msg = document.getElementById('msg');
   f.addEventListener('submit', function (ev) {
