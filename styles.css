@@ -298,6 +298,32 @@ footer .brand { color: var(--text); }
 footer .brand .m { background: var(--ink); }
 .legal { margin-top: 32px; padding-top: 22px; border-top: 1px solid var(--line); }
 
+
+/* Brücken-Schema */
+.bridge-sec { position: relative; overflow: hidden; }
+.bridge-sec::before { content: ""; position: absolute; inset: 0; background: radial-gradient(700px 480px at 75% 50%, rgba(51,88,255,0.22), transparent 62%); pointer-events: none; }
+.bridge-grid { position: relative; display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 56px; align-items: center; }
+@media (max-width: 960px) { .bridge-grid { grid-template-columns: 1fr; gap: 36px; } }
+.bridge-sec h2 { color: #fff; }
+.bridge-sec .bl { color: rgba(255,255,255,0.72); font-size: 1.1rem; margin-top: 20px; max-width: 30em; }
+.bpoints { list-style: none; margin: 30px 0 0; padding: 0; display: grid; gap: 16px; }
+.bpoints li { display: grid; gap: 2px; padding-left: 20px; border-left: 2px solid var(--accent); }
+.bpoints b { font-family: var(--font-display); font-size: 1.08rem; }
+.bpoints span { color: rgba(255,255,255,0.65); font-size: 0.96rem; }
+.bridge { width: 100%; height: auto; display: block; }
+.bridge .node rect { fill: rgba(255,255,255,0.05); stroke: rgba(255,255,255,0.16); transition: fill .25s, stroke .25s; }
+.bridge .node:hover rect { fill: rgba(51,88,255,0.18); stroke: var(--accent-2); }
+.bridge .node text { fill: #fff; font-family: var(--font-body); font-size: 14px; font-weight: 600; }
+.bridge .node text.s { fill: rgba(255,255,255,0.5); font-family: var(--font-mono); font-size: 10.5px; font-weight: 400; letter-spacing: 0.06em; }
+.bridge .col { fill: rgba(255,255,255,0.45); font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.16em; }
+.bridge .wire { fill: none; stroke: rgba(157,177,255,0.28); stroke-width: 1.5; }
+.bridge .hub circle.o { fill: var(--accent); }
+.bridge .hub circle.ring { fill: none; stroke: rgba(51,88,255,0.45); }
+.bridge .hub text { fill: #fff; font-family: var(--font-display); font-weight: 900; font-size: 17px; }
+.bridge .pulse { fill: #9db1ff; }
+.ringanim { transform-origin: 260px 230px; animation: ring 3.2s ease-out infinite; }
+@keyframes ring { 0% { transform: scale(0.85); opacity: 0.9; } 100% { transform: scale(1.5); opacity: 0; } }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
   html { scroll-behavior: auto; }
